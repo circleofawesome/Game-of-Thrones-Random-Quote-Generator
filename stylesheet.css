@@ -2,6 +2,44 @@ body{
 	background-color: white;
 }
 
-.top-row{
+.blank-row{
 	background-color: blue;
+}
+
+.sigil{
+	text-align: right;
+}
+
+.quote-text{
+	font-size: 80px;
+}
+
+
+/*
+Remember that the button's background needs to match the text color of the quote aka black; and the button's text color needs to be match the page's background color;
+*/
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
 }
