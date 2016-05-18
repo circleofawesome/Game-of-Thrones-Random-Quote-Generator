@@ -16,4 +16,14 @@ $(document).ready(function(){
 		14:["davos","http://i68.tinypic.com/e7iknr.jpg","#EFAE2C"],
 		15:["daenerys","http://i67.tinypic.com/2884j0g.png","#BF1E2E"]
 	};
+
+	var num=Math.floor(Math.random()*(16-1)+1);
+
+	$.ajax({
+		type:'GET',
+		url:'http://cors.io/?u=https://got-quotes.herokuapp.com/quotes?char='+characters[num][0],
+		success:function(data){
+			
+		}
+	});
 });
