@@ -1,0 +1,17 @@
+characters:
+
+1 jon
+2 tyrion
+3 jaime
+4 brynden
+5 cersei
+6 hound
+7 littlefinger 
+8 olenna
+9 renly
+10 varys 
+11 bran 
+12 victarion
+13 sansa 
+14 davos 
+15 daenerys 
