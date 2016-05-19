@@ -29,13 +29,15 @@ $(document).ready(function(){
 			var author=data.character;
 			var picture=characters[num][1];
 			var backColor=characters[num][2];
-			//$("h1").append(quote);
 			$("<p class='quote-text'>"+quote+"</p>").replaceAll(".quote-text").hide().fadeIn(2000);
 			$("<p class='author-text'>"+author+"</p>").replaceAll(".author-text").hide().fadeIn(4000);
 			$(".quote-text").css("color",backColor);
 			$(".sigil").append("<img src="+picture+">").hide().fadeIn(1000);
-			$(".buttons").append("<button type='button' class='btn btn-primary'>Tweet!</button> <button type='button' class='btn btn-primary'>More</button>");
-			$(".buttons").hide().fadeIn(6000);
+			$(".buttons").append("<button type='button' class='btn'>Tweet!</button> <button type='button' class='btn'>More</button>");
+			$(".buttons").hide().fadeIn(1000);
+			$(".btn").css("background",backColor);
+			
+			//$(".btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary").css("background","yellow");
 		}
 	});
 });
