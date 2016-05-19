@@ -22,8 +22,14 @@ $(document).ready(function(){
 	$.ajax({
 		type:'GET',
 		url:'http://cors.io/?u=https://got-quotes.herokuapp.com/quotes?char='+characters[num][0],
+		//url:'http://cors.io/?u=https://got-quotes.herokuapp.com/quotes?char=tyrion',
+		dataType:'JSON',
 		success:function(data){
-			
+			var quote=data["quote"];
+			var author=data.character;
+			//$("h1").append(quote);
+			$("<p class='quote-text'>"+quote+"</p>").replaceAll(".quote-text");
+			$("<p class='author-text'>"+author+"</p>").replaceAll(".author-text");
 		}
 	});
 });

@@ -3,7 +3,7 @@ body{
 }
 
 .blank-row{
-	background-color: blue;
+	background-color: white;
 }
 
 .sigil{
@@ -12,6 +12,11 @@ body{
 
 .quote-text{
 	font-size: 80px;
+}
+
+.author-text{
+    font-size: 40px;
+    text-align: center;
 }
 
 
