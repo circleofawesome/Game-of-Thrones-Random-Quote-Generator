@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	var characters={
-		1:["jon","http://i67.tinypic.com/v7rk3.png","#E4E4E4"],
+		1:["jon","http://i67.tinypic.com/v7rk3.png","#525252"],
 		2:["tyrion","http://i65.tinypic.com/30di5fl.png","#D73224"],
 		3:["jaime","http://i65.tinypic.com/30di5fl.png","#D73224"],
 		4:["brynden","http://i66.tinypic.com/2i1kpba.png","#998BFA"],
@@ -10,9 +10,9 @@ $(document).ready(function(){
 		8:["olenna","http://i65.tinypic.com/oh0gn5.png","#DAE8B6"],
 		9:["renly","http://i68.tinypic.com/e7iknr.jpg","#EFAE2C"],
 		10:["varys","http://i67.tinypic.com/2884j0g.png","#BF1E2E"],
-		11:["bran","http://i67.tinypic.com/v7rk3.png","#E4E4E4"],
+		11:["bran","http://i67.tinypic.com/v7rk3.png","#525252"],
 		12:["victarion","http://i68.tinypic.com/9gcxdu.png","#FBE106"],
-		13:["sansa","http://i67.tinypic.com/v7rk3.png","#E4E4E4"],
+		13:["sansa","http://i67.tinypic.com/v7rk3.png","#525252"],
 		14:["davos","http://i68.tinypic.com/e7iknr.jpg","#EFAE2C"],
 		15:["daenerys","http://i67.tinypic.com/2884j0g.png","#BF1E2E"]
 	};
@@ -27,9 +27,14 @@ $(document).ready(function(){
 		success:function(data){
 			var quote=data["quote"];
 			var author=data.character;
+			var picture=characters[num][1];
+			var backColor=characters[num][2];
 			//$("h1").append(quote);
 			$("<p class='quote-text'>"+quote+"</p>").replaceAll(".quote-text");
 			$("<p class='author-text'>"+author+"</p>").replaceAll(".author-text");
+			//$("<img class='pic' src="+picture+">").replaceAll(".pic");
+			$(".quote-text").css("color",backColor);
+			$(".sigil").append("<img src="+picture+">");
 		}
 	});
 });
