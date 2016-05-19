@@ -19,10 +19,11 @@ $(document).ready(function(){
 
 	var num=Math.floor(Math.random()*(16-1)+1);
 
-	$.ajax({
+	function quotePage(){
+		
+		$.ajax({
 		type:'GET',
 		url:'http://cors.io/?u=https://got-quotes.herokuapp.com/quotes?char='+characters[num][0],
-		//url:'http://cors.io/?u=https://got-quotes.herokuapp.com/quotes?char=tyrion',
 		dataType:'JSON',
 		success:function(data){
 			var quote=data["quote"];
@@ -32,12 +33,26 @@ $(document).ready(function(){
 			$("<p class='quote-text'>"+quote+"</p>").replaceAll(".quote-text").hide().fadeIn(2000);
 			$("<p class='author-text'>"+author+"</p>").replaceAll(".author-text").hide().fadeIn(4000);
 			$(".quote-text").css("color",backColor);
-			$(".sigil").append("<img src="+picture+">").hide().fadeIn(1000);
-			$(".buttons").append("<button type='button' class='btn'>Tweet!</button> <button type='button' class='btn'>More</button>");
+			$(".author-text").css("color",backColor);
+			$(".sigil").append("<img class='pic' src="+picture+">").hide().fadeIn(1000);
+			//$(".sigil").append("<img src="+picture+">").hide().fadeIn(1000);
+			//$(".pic").replaceWith("<img class='pic'src="+picture+">").hide().fadeIn(1000);
+			$(".buttons").append("<button type='button' class='btn tweet'>Tweet!</button> <button type='button' class='btn more'>More</button>");
 			$(".buttons").hide().fadeIn(1000);
 			$(".btn").css("background",backColor);
-			
-			//$(".btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary").css("background","yellow");
-		}
+			}
+		});
+	}
+
+	quotePage();
+	//this works, just need to incorporate this with click function on the more button 
+	
+	$(".buttons").click(function(){
+		//alert("The paragraph was clicked.");
+		num=Math.floor(Math.random()*(16-1)+1);
+		$(".pic").remove();
+		$(".tweet").remove();
+		$(".more").remove();
+		quotePage();
 	});
 });
