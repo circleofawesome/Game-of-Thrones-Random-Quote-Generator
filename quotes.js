@@ -7,7 +7,7 @@ $(document).ready(function(){
 		5:["cersei","http://i65.tinypic.com/30di5fl.png","#D73224"],
 		6:["hound","http://i63.tinypic.com/2w5ung1.png","#FEE855"],
 		7:["littlefinger","http://oi67.tinypic.com/oa9cu1.jpg","#B0CDFC"],
-		8:["olenna","http://i65.tinypic.com/oh0gn5.png","#DAE8B6"],
+		8:["olenna","http://i65.tinypic.com/oh0gn5.png","#667932"],
 		9:["renly","http://i68.tinypic.com/e7iknr.jpg","#EFAE2C"],
 		10:["varys","http://i67.tinypic.com/2884j0g.png","#BF1E2E"],
 		11:["bran","http://i67.tinypic.com/v7rk3.png","#525252"],
@@ -30,11 +30,12 @@ $(document).ready(function(){
 			var picture=characters[num][1];
 			var backColor=characters[num][2];
 			//$("h1").append(quote);
-			$("<p class='quote-text'>"+quote+"</p>").replaceAll(".quote-text");
-			$("<p class='author-text'>"+author+"</p>").replaceAll(".author-text");
-			//$("<img class='pic' src="+picture+">").replaceAll(".pic");
+			$("<p class='quote-text'>"+quote+"</p>").replaceAll(".quote-text").hide().fadeIn(2000);
+			$("<p class='author-text'>"+author+"</p>").replaceAll(".author-text").hide().fadeIn(4000);
 			$(".quote-text").css("color",backColor);
-			$(".sigil").append("<img src="+picture+">");
+			$(".sigil").append("<img src="+picture+">").hide().fadeIn(1000);
+			$(".buttons").append("<button type='button' class='btn btn-primary'>Tweet!</button> <button type='button' class='btn btn-primary'>More</button>");
+			$(".buttons").hide().fadeIn(6000);
 		}
 	});
 });
