@@ -35,9 +35,7 @@ $(document).ready(function(){
 			$(".quote-text").css("color",backColor);
 			$(".author-text").css("color",backColor);
 			$(".sigil").append("<img class='pic' src="+picture+">").hide().fadeIn(1000);
-			//$(".sigil").append("<img src="+picture+">").hide().fadeIn(1000);
-			//$(".pic").replaceWith("<img class='pic'src="+picture+">").hide().fadeIn(1000);
-			$(".buttons").append("<button type='button' class='btn tweet'>Tweet!</button> <button type='button' class='btn more'>More</button>");
+			$(".buttons").append("<button type='button' class='btn' id='tweet'>Tweet!</button> <button type='button' class='btn' id='more'>More</button>");
 			$(".buttons").hide().fadeIn(1000);
 			$(".btn").css("background",backColor);
 			}
@@ -47,7 +45,7 @@ $(document).ready(function(){
 	quotePage();
 	//this works, just need to incorporate this with click function on the more button 
 	
-	$(".buttons").click(function(){
+	$("#more").click(function(){
 		//alert("The paragraph was clicked.");
 		num=Math.floor(Math.random()*(16-1)+1);
 		$(".pic").remove();
