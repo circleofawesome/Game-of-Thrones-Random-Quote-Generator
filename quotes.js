@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$(".buttons").hide().fadeIn(4000);
 	var characters={
 		1:["jon","http://i67.tinypic.com/v7rk3.png","#525252"],
 		2:["tyrion","http://i65.tinypic.com/30di5fl.png","#D73224"],
@@ -35,22 +36,19 @@ $(document).ready(function(){
 			$(".quote-text").css("color",backColor);
 			$(".author-text").css("color",backColor);
 			$(".sigil").append("<img class='pic' src="+picture+">").hide().fadeIn(1000);
-			$(".buttons").append("<button type='button' class='btn' id='tweet'>Tweet!</button> <button type='button' class='btn' id='more'>More</button>");
-			$(".buttons").hide().fadeIn(1000);
+			//$(".buttons").append("<button type='button' class='btn tweet'>Tweet!</button> <button type='button' class='btn more'>More</button>");
+			//$(".buttons").hide().fadeIn(1000);
 			$(".btn").css("background",backColor);
 			}
 		});
 	}
-
+  
 	quotePage();
-	//this works, just need to incorporate this with click function on the more button 
-	
-	$("#more").click(function(){
-		//alert("The paragraph was clicked.");
-		num=Math.floor(Math.random()*(16-1)+1);
-		$(".pic").remove();
-		$(".tweet").remove();
-		$(".more").remove();
-		quotePage();
+
+	$(".more").click(function(){
+	    num=Math.floor(Math.random()*(16-1)+1);
+	    $(".pic").remove();
+	    quotePage();
 	});
+	
 });
