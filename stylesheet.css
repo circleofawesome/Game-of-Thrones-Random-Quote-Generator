@@ -27,8 +27,20 @@ body{
     letter-spacing: 1px;
     text-transform: uppercase;
     color: white;
+    outline: none;
 }
 
 .btn:focus{
     color: white;
+    outline: none;
+}
+
+.btn:hover{
+    color: black;
+}
+
+.btn:active{
+    color: white;
+    border:0 none;
+    outline: none;
 }

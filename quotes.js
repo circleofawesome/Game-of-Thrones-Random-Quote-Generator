@@ -32,7 +32,7 @@ $(document).ready(function(){
 			var picture=characters[num][1];
 			var backColor=characters[num][2];
 			$("<p class='quote-text'>"+quote+"</p>").replaceAll(".quote-text").hide().fadeIn(2000);
-			$("<p class='author-text'>"+author+"</p>").replaceAll(".author-text").hide().fadeIn(4000);
+			$("<p class='author-text'>"+author+"</p>").replaceAll(".author-text").hide().fadeIn(3000);
 			$(".quote-text").css("color",backColor);
 			$(".author-text").css("color",backColor);
 			$(".sigil").append("<img class='pic' src="+picture+">").hide().fadeIn(1000);
@@ -50,5 +50,7 @@ $(document).ready(function(){
 	    $(".pic").remove();
 	    quotePage();
 	});
+
+
 	
 });
