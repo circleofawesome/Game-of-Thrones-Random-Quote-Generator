@@ -19,6 +19,8 @@ $(document).ready(function(){
 	};
 
 	var num=Math.floor(Math.random()*(16-1)+1);
+	var quote;
+	var author;
 
 	function quotePage(){
 		
@@ -27,8 +29,8 @@ $(document).ready(function(){
 		url:'http://cors.io/?u=https://got-quotes.herokuapp.com/quotes?char='+characters[num][0],
 		dataType:'JSON',
 		success:function(data){
-			var quote=data["quote"];
-			var author=data.character;
+			quote=data["quote"];
+			author=data.character;
 			var picture=characters[num][1];
 			var backColor=characters[num][2];
 			$("<p class='quote-text'>"+quote+"</p>").replaceAll(".quote-text").hide().fadeIn(2000);
@@ -39,18 +41,26 @@ $(document).ready(function(){
 			//$(".buttons").append("<button type='button' class='btn tweet'>Tweet!</button> <button type='button' class='btn more'>More</button>");
 			//$(".buttons").hide().fadeIn(1000);
 			$(".btn").css("background",backColor);
+			//$("a.btn-twitter").replaceWith("<a class='btn btn-social-icon btn-twitter btn-lg' href='https://twitter.com/intent/tweet?text="+quote+"'><span class='fa fa-twitter'></span></a>"));
+			//$("a[href='https://twitter.com/intent/tweet?text=default%20text']").attr("href","https://twitter.com/intent/tweet?text="+quote);
+			$("a[href='https://twitter.com/intent/tweet?text=default%20text']").attr("href","https://twitter.com/intent/tweet?text="+quote);
 			}
+
 		});
+			//$("a.btn-twitter").replaceAll("<a class='btn btn-social-icon btn-twitter btn-lg' href='https://twitter.com/intent/tweet?text="+quote+"'><span class='fa fa-twitter'></span></a>"));
 	}
-  
+  		
 	quotePage();
 
-	$(".more").click(function(){
+	$(".more").on("click",function(){
+		$("a[href='https://twitter.com/intent/tweet?text="+quote+"']").attr("href","https://twitter.com/intent/tweet?text=default%20text");
+
 	    num=Math.floor(Math.random()*(16-1)+1);
+
 	    $(".pic").remove();
+	    //$("a[href='https://twitter.com/intent/tweet?text="+quote+"']").attr("href","https://twitter.com/intent/tweet?text=default%20text");
 	    quotePage();
+	    //$("a[href='https://twitter.com/intent/tweet?text="+quote+"']").attr("href","https://twitter.com/intent/tweet?text=default%20text");
 	});
-
-
 	
 });
