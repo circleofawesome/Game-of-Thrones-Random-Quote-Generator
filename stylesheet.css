@@ -12,11 +12,13 @@ body{
 
 .quote-text{
 	font-size: 80px;
+    font-family: 'Niconne', cursive;
 }
 
 .author-text{
     font-size: 50px;
     text-align: center;
+    font-family: 'Niconne', cursive;
 }
 
 
