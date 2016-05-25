@@ -21,6 +21,7 @@ $(document).ready(function(){
 	var num=Math.floor(Math.random()*(16-1)+1);
 	var quote;
 	var author;
+	var full_quote;
 
 	function quotePage(){
 		
@@ -31,6 +32,7 @@ $(document).ready(function(){
 		success:function(data){
 			quote=data["quote"];
 			author=data.character;
+			full_quote=quote+"   -"+author;
 			var picture=characters[num][1];
 			var backColor=characters[num][2];
 			$("<p class='quote-text'>"+quote+"</p>").replaceAll(".quote-text").hide().fadeIn(2000);
@@ -38,30 +40,18 @@ $(document).ready(function(){
 			$(".quote-text").css("color",backColor);
 			$(".author-text").css("color",backColor);
 			$(".sigil").append("<img class='pic' src="+picture+">").hide().fadeIn(1000);
-			//$(".buttons").append("<button type='button' class='btn tweet'>Tweet!</button> <button type='button' class='btn more'>More</button>");
-			//$(".buttons").hide().fadeIn(1000);
 			$(".btn").css("background",backColor);
-			//$("a.btn-twitter").replaceWith("<a class='btn btn-social-icon btn-twitter btn-lg' href='https://twitter.com/intent/tweet?text="+quote+"'><span class='fa fa-twitter'></span></a>"));
-			//$("a[href='https://twitter.com/intent/tweet?text=default%20text']").attr("href","https://twitter.com/intent/tweet?text="+quote);
-			$("a[href='https://twitter.com/intent/tweet?text=default%20text']").attr("href","https://twitter.com/intent/tweet?text="+quote);
+			$("a[href='https://twitter.com/intent/tweet?text=default%20text']").attr("href","https://twitter.com/intent/tweet?text="+full_quote);
 			}
-
 		});
-			//$("a.btn-twitter").replaceAll("<a class='btn btn-social-icon btn-twitter btn-lg' href='https://twitter.com/intent/tweet?text="+quote+"'><span class='fa fa-twitter'></span></a>"));
 	}
   		
 	quotePage();
 
 	$(".more").on("click",function(){
-		//this one$("a[href='https://twitter.com/intent/tweet?text="+quote+"']").attr("href","https://twitter.com/intent/tweet?text=default%20text");
-		$('a[href="https://twitter.com/intent/tweet?text='+quote+'"]').attr('href','https://twitter.com/intent/tweet?text=default%20text');
-
+		$('a[href="https://twitter.com/intent/tweet?text='+full_quote+'"]').attr('href','https://twitter.com/intent/tweet?text=default%20text');
 	    num=Math.floor(Math.random()*(16-1)+1);
-
-	    $(".pic").remove();
-	    //$("a[href='https://twitter.com/intent/tweet?text="+quote+"']").attr("href","https://twitter.com/intent/tweet?text=default%20text");
+	    $(".pic").remove(); 
 	    quotePage();
-	    //$("a[href='https://twitter.com/intent/tweet?text="+quote+"']").attr("href","https://twitter.com/intent/tweet?text=default%20text");
 	});
-	
 });
