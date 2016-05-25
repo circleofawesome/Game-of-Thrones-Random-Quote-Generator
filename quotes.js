@@ -53,7 +53,8 @@ $(document).ready(function(){
 	quotePage();
 
 	$(".more").on("click",function(){
-		$("a[href='https://twitter.com/intent/tweet?text="+quote+"']").attr("href","https://twitter.com/intent/tweet?text=default%20text");
+		//this one$("a[href='https://twitter.com/intent/tweet?text="+quote+"']").attr("href","https://twitter.com/intent/tweet?text=default%20text");
+		$('a[href="https://twitter.com/intent/tweet?text='+quote+'"]').attr('href','https://twitter.com/intent/tweet?text=default%20text');
 
 	    num=Math.floor(Math.random()*(16-1)+1);
 
